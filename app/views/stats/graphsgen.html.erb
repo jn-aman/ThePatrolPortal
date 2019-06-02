@@ -1,0 +1,57 @@
+<style>
+
+.btn {
+  border-radius: 5px;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.danger {
+    border-color: #F012BE;
+    color: #F012BE;
+}
+
+.danger:hover {
+    background: #F012BE;
+    color: white;
+}
+
+.tm-btn-white-big1 {
+    font-size: 1.5rem;
+    padding: 0.5rem 2.5rem;
+    border-radius: 0.5rem;
+}
+
+</style>
+
+<center>
+<p><h1>Real Truth of Society</h1></p>
+
+<br>
+<br>
+
+
+<%= line_chart Crime.group(:type).group(:locality).count, width: "800px", height: "400px" ,xtitle: "Locality", ytitle: "Count of Crime" %>
+<p><h3>Tally of Crime</h3></p>
+<br>
+<hr>
+<br>
+
+<%= pie_chart({'Teen[Under 18]' => @records_array.first[0], "Youth[18-30]" => @records_array.first[1],'Adult[30-70]' => @records_array.first[2]}) %>
+
+<p><h3>Crime Reporting Age Groups</h3></p>
+
+
+<br>
+<hr>
+<br>
+
+<%#= link_to 'Register Crime', new_crime_path,{ :class=>"tm-btn-white-big1 btn danger" }  %>
+<%= link_to 'Back', stat_index_path,{ :class=>"tm-btn-white-big1 btn btn danger" }  %>
+<%= link_to 'Back to Dock', slider_path,{ :class=>"tm-btn-white-big1 btn btn danger" }  %>
+
+
+</center>

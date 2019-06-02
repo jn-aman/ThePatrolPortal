@@ -1,0 +1,128 @@
+<style type="text/css">
+  * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  transition: flex .4s ease;
+  position: relative;
+}
+
+.section .overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: background-color .8s ease;
+}
+
+
+
+.section .content {
+  z-index: 2;
+}
+
+.section:hover {
+  flex: 2;
+}
+
+.section:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+.section1 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  transition: flex .4s ease;
+  position: relative;
+}
+
+.section1 .overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: background-color .8s ease;
+}
+
+
+
+.section1 .content {
+  z-index: 2;
+}
+
+.section1:hover {
+  flex: 2;
+}
+
+
+
+
+
+.section1:hover .overlay {
+  background-color: white;
+}
+#camp {
+  background-image: url(/assets/camp.jpg);
+}
+
+
+#sanitation {
+  background-image: url(/assets/sanitation.jpg);
+}
+
+
+A.class1 {color:#DDDDDD;
+text-decoration: none;}
+A.class1:hover { color: white;}
+A.class2 {color:#DDDDDD;
+text-decoration: none;}
+A.class2:hover { color: #111111;}
+  
+</style>
+
+<div class="container">
+  <div id="camp" class="section">
+   
+    <div class="content">
+<h1><%= link_to('Camp Related', stat_index_path,{ :class=>"class1" }) %></h1>
+    </div>
+    <div class="overlay"></div>
+  </div>
+  <div id="sanitation" class="section1">
+    <div class="content">
+      <h1><%= link_to('Sanitation Related', stat_index_path,{ :class=>"class2" }) %></h1>
+
+      <!-- <h1>Sanitation Related</h1> -->
+    </div>
+    <div class="overlay"></div>
+  </div>
+  
+</div>

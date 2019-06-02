@@ -1,0 +1,126 @@
+<body class="aman">
+<center>
+<%=stylesheet_link_tag "dev"%>
+<script type="text/javascript">
+    $(function() {
+    var availableTags = <%= raw json_escape(Crime.unique_loc.to_json) %>;
+    $( "#addresspicker_map" ).autocomplete({
+      source: availableTags
+    });
+  } );
+
+    $(function() {
+    var availableTags = <%= raw json_escape(Crime.unique_type.to_json) %>;
+    $( "#addresspicker_maps" ).autocomplete({
+      source: availableTags
+    });
+  } );
+
+
+var x = document.getElementById("lat");
+
+function getLocation() {
+ 
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = 0;
+    }
+}
+
+function showPosition(position) {
+   document.getElementById("lat").value =position.coords.latitude;
+      document.getElementById("lng").value =position.coords.longitude;
+
+// console.log(position.coords.latitude);
+}
+
+
+
+
+  
+// function takesnapshot(){
+//     Webcam.snap(function(data_uri) {
+//         id = $('[id*="_image"]');
+// // console.log(data_uri);
+//         if (id.length) {
+//             id.val(data_uri);
+//         }
+//         //console.log(id)
+
+//         document.getElementById('results').innerHTML = '<img src="' + data_uri + '"/>';
+//     });
+// return false;}
+// $(document).ready(function() {
+//     if ($("#my_camera").length) {
+//         Webcam.set({
+//             width: 320,
+//             height: 240,
+//             image_format: 'jpeg',
+//             jpeg_quality: 90
+//         });
+
+//         Webcam.attach('#my_camera');
+//     }
+// });
+</script>
+<br><br>
+<br>
+
+<%= form_for(@crime ,html: {:onclick => "return getLocation();"} )do |f| %>
+  <% if @crime.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@crime.errors.count, "error") %> prohibited this crime from being saved:</h2>
+
+      <ul>
+      <% @crime.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Type %><br>
+    <%= f.text_field :Type,:id => "addresspicker_maps" %>
+  </div>
+  <div class="field">
+    <%= f.label :Locality %><br>
+    <%= f.text_field :Locality ,:id => "addresspicker_map"%>
+  </div>
+  <div class="field">
+    <%= f.label :Description %><br>
+    <%= f.text_area :Description %>
+  </div>
+
+    <br>
+    <%= f.file_field :avatar ,:accept =>"image/*;capture=camera"%>
+  
+<br>
+    <%= f.hidden_field :lat,:id => "lat" %>
+<%= f.hidden_field :lng,:id => "lng" %>
+    
+<!-- <div id="my_camera"></div> -->
+
+  <!-- <input type=button value="Take Snapshot" onClick="takesnapshot()"> -->
+
+  <div class="field">
+    <%#= f.hidden_field :image %>
+    <%#= f.label :image %>: <br />
+    <!-- <div id="results">Your captured image will appear here...</div> -->
+  </div>
+
+  <div class="actions">
+    <%= f.submit%>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+
+
+</body>

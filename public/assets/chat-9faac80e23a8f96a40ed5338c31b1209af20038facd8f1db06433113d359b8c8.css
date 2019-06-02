@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+/* line 3, /Users/amanjain/Desktop/ThePatrolPortal/app/assets/stylesheets/chat.scss */
+body {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+/* line 7, /Users/amanjain/Desktop/ThePatrolPortal/app/assets/stylesheets/chat.scss */
+.full-height {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* line 12, /Users/amanjain/Desktop/ThePatrolPortal/app/assets/stylesheets/chat.scss */
+input.form-control.sidebar-form {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+/* line 20, /Users/amanjain/Desktop/ThePatrolPortal/app/assets/stylesheets/chat.scss */
+.chat-box {
+  height: 94vh;
+  overflow: scroll;
+}
+
+/* line 25, /Users/amanjain/Desktop/ThePatrolPortal/app/assets/stylesheets/chat.scss */
+.chat {
+  border-radius: 3px;
+  padding: 0rem 2rem 0 1rem;
+}
+
+/* line 30, /Users/amanjain/Desktop/ThePatrolPortal/app/assets/stylesheets/chat.scss */
+.chat-username {
+  font-size: 0.7rem;
+}
+
+/* line 34, /Users/amanjain/Desktop/ThePatrolPortal/app/assets/stylesheets/chat.scss */
+.chat-message {
+  font-size: 0.85rem;
+}

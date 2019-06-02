@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis");
+/* line 2, /Users/amanjain/Desktop/ThePatrolPortal/app/assets/stylesheets/trip.scss */
+body {
+  font-family: 'Dosis', sans-serif;
+}
+
+/* line 5, /Users/amanjain/Desktop/ThePatrolPortal/app/assets/stylesheets/trip.scss */
+#map {
+  width: 100%;
+  height: 42rem;
+}

@@ -1,0 +1,100 @@
+<%=stylesheet_link_tag "online"%>
+<style>
+
+
+{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+ 
+td,th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+ tr:hover {background-color: #ddd;}
+
+ th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: LightSkyBlue;
+    color: white;
+}
+.tm-btn-white-big1 {
+    font-size: 1.5rem;
+    color: white;
+    background-color: LightSkyBlue;
+    padding: 0.5rem 2.5rem;
+    border-radius: 0.5rem;
+}
+</style>
+
+      <div class="container"> 
+          <% if notice %>
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+              <p class="notice m-0"><%= notice %></p>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <% end %>
+          <% if alert %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <p class="m-0"><%= alert %></p>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <% end %>
+        </div> 
+
+
+      
+     <div class="container-fluid full-page">
+      <div class="row">
+        <div class="col-6 col-md-3 col-lg-2 bg-dark full-page">
+          <% if volunteer_signed_in? %>
+            <p class="text-white mt-3">Signed in as <%= current_volunteer.name.capitalize %></p>
+          <% end %>
+          
+          <h6 class="text-white my-3">Online Volunteer</h6>
+          <div class="left">
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Police Station</th>
+    <th>Mobile Number</th>
+    <th>Category</th>
+  </tr>
+          	
+            <% @users.each do |user| %>
+              <% if user.username != current_volunteer.username and user.is_signed_in %>
+                <p class="active-user bg-white" data-id="<%= user.id %>">
+                  <span class="online-icon d-inline-block bg-success"></span>
+                  <span class="username"><%= link_to  user.name.capitalize, shown_path(user.name.capitalize)%>
+                    &emsp;
+
+
+                  
+                    <%= user.police_station%>
+                  </span>
+
+
+                </p>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-6 col-md-9 col-lg-10 bg-light full-page right py-3">
+          <%= link_to 'Log out', destroy_volunteer_session_path, class: 'btn btn-warning d-inline-block float-right' %>
+        </div>
+      </div>
+    </div>

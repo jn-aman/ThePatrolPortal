@@ -1,0 +1,52 @@
+
+<body class="aman">
+<%#=stylesheet_link_tag "show_crime"%>
+
+<center>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @crime.Type %>
+</p>
+
+<p>
+  <strong>Locality:</strong>
+  <%= @crime.Locality %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @crime.Description %>
+</p>
+<p>
+  <strong>Crime Scene:</strong>
+  <%= image_tag @crime.avatar.url(:medium) %>
+</p>
+
+  <strong>Reporter:</strong>
+  <%= image_tag @crime.image %>
+</p>
+<p>
+  <strong>Age:</strong>
+  <%= @crime.Age %>
+</p>
+<p>
+  <strong>Gender:</strong>
+  <%= @crime.Gender %>
+</p>
+<p>
+<!-- <strong>lat:</strong> -->
+  <%= @crime.lat %>
+</p>
+<p>
+<!-- <strong>lng:</strong> -->
+  <%= @crime.lng %>
+</p>
+
+
+<%= link_to 'Edit', edit_crime_path(@crime),{ :class=>"btn btn-outline-danger" } %> |
+<%= link_to 'Back', search_crime_path ,{ :class=>"btn btn-outline-danger" }%> |
+<%= link_to 'Back to Docket', slider_path,{ :class=>"btn btn-outline-danger" } %>
+</center>

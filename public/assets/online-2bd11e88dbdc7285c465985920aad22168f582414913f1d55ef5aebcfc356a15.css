@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis");
+/* line 2, /Users/amanjain/Desktop/ThePatrolPortal/app/assets/stylesheets/online.scss */
+body {
+  font-family: 'Dosis', sans-serif;
+}
+
+/* line 5, /Users/amanjain/Desktop/ThePatrolPortal/app/assets/stylesheets/online.scss */
+.login-container {
+  border-radius: 3px;
+}
+
+/* line 8, /Users/amanjain/Desktop/ThePatrolPortal/app/assets/stylesheets/online.scss */
+.full-page {
+  height: 100vh;
+}
+
+/* line 11, /Users/amanjain/Desktop/ThePatrolPortal/app/assets/stylesheets/online.scss */
+.left {
+  overflow-y: scroll;
+  height: 86vh;
+}
+
+/* line 15, /Users/amanjain/Desktop/ThePatrolPortal/app/assets/stylesheets/online.scss */
+.active-user {
+  border-radius: 3px;
+  padding-left: 0.5rem;
+  font-weight: 900;
+  margin-right: 0.5rem;
+}
+/* line 20, /Users/amanjain/Desktop/ThePatrolPortal/app/assets/stylesheets/online.scss */
+.active-user .online-icon {
+  border-radius: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+/* line 26, /Users/amanjain/Desktop/ThePatrolPortal/app/assets/stylesheets/online.scss */
+.left::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+/* line 29, /Users/amanjain/Desktop/ThePatrolPortal/app/assets/stylesheets/online.scss */
+.left::-webkit-scrollbar-thumb {
+  background: #fff3;
+}

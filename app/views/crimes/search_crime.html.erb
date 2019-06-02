@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+
+<style type="text/css">
+
+
+
+.tm-btn-white-big1 {
+    font-size: 1.5rem;
+    font-family: 'Roboto';
+    padding: 0.5rem 5rem;
+    border-radius: 0.5rem;
+}
+
+
+	h1 { color: #111; font-family: 'Open+Sans', sans-serif; font-size: 275px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+
+</style>
+<%=stylesheet_link_tag "search_crime"%>
+
+<!-- <span id="typed"></span>
+ -->
+<span id="typed-strings">
+    <p>Crime Portal.</p>
+</span>
+<p><h1 id="typed"></h1></p>
+
+<script>
+    var options = {
+        typeSpeed: 150,
+
+        stringsElement: '#typed-strings'
+    }
+    var typed = new Typed("#typed", options);
+
+    window.addEventListener('popstate', () => {
+  location.reload();
+}, false);
+
+
+
+</script>
+
+
+<div class="container">
+
+  <input type="text" id="contact_name" name="contact_name" placeholder="Search..." >
+  <div class="search"></div>
+</div>
+<center><%= link_to 'Register Crime', new_crime_path,{ :class=>"tm-btn-white-big1 btn btn-outline-danger" }  %>
+&nbsp;&nbsp;
+
+<%= link_to 'View All', crimes_path,{ :class=>"tm-btn-white-big1 btn btn-outline-danger" }  %>&nbsp;&nbsp;
+<%= link_to 'Back to Dock', slider_path,{ :class=>"tm-btn-white-big1 btn btn-outline-danger" }  %></center>
+
+
+<script type="text/javascript">
+	
+  $(function() {
+    var availableTags = <%= raw json_escape(@loc.to_json) %>;
+    $( "#contact_name" ).autocomplete({
+      source: availableTags
+    });
+  } );
+
+
+
+
+$(document).keypress(function (e) {
+	                console.log("aman");
+if($( '#contact_name' ).val().length==1)
+	return false;
+             var code = e.keyCode ? e.keyCode : e.which;
+             if (code.toString() == 13) {
+                console.log("aman");
+                QLSearch(); // call the function to redirect to another page
+                 return false;
+             }
+     });
+
+// Function that redirect the user to another page
+function QLSearch() {
+          window.location = '/crimes/locality/'+$( '#contact_name' ).val();
+}
+
+
+</script>

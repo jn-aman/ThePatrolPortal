@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>The Patrol Portal </title>
+
+
+    
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+    <!-- <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="css/bootstrap.min.css">                       
+    <link rel="stylesheet" href="css/templatemo-style.css">  -->                   
+
+   
+</head>
+
+
+   <body>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+ new WOW().init();
+  $(function() {
+    var availableTags = <%= raw json_escape(@pol.to_json) %>;
+    $( "#contact_name" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  
+  </script>
+  <script>
+
+  $(function() {
+    var availableTags = <%= raw json_escape(@name.to_json) %>;
+    $( "#contact_namess" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  
+  $(function() {
+    var availableTags = <%= raw json_escape(@cat.to_json) %>;
+    $( "#contact_namesss" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  $(function() {
+    var availableTags = <%= raw json_escape(@loc.to_json) %>;
+    $( "#contact_namessss" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  
+  </script>
+
+
+
+        <div class="container-fluid">
+            
+            <div class="row wow zoomInUp"> 
+
+                <section class="tm-section-intro">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tm-wrapper-center">
+                            <h1 class="tm-section-intro-title">The Patrol Portal</h1>
+                            <p class="tm-section-intro-text">Your go to place for all your security concerns.<br>
+                            We provide safety which is for the civilians, by the civilians and from the civilians.
+                            </p>
+                            <a href="#tm-section-2" class="tm-btn-white-big">Explore</a>
+                        </div>            
+                    </div>
+                </section>    
+
+            </div>
+
+            <div class="row wow shake" id="tm-section-2">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+                    
+                    <section class="wow tada">
+                        <div id="tmCarousel" class="carousel slide tm-carousel" data-ride="carousel" data-interval="false"> 
+
+                            <ol class="carousel-indicators">
+                                <li data-target="#tmCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#tmCarousel" data-slide-to="1" class=""></li>
+                                <li data-target="#tmCarousel" data-slide-to="2" class=""></li>
+                            </ol>
+
+                            <div class="carousel-inner" role="listbox">
+                            
+                                <div class="carousel-item active">
+                                    <div class="carousel-content">
+                                        <div>
+                                            <h2 class="tm-carousel-item-title">Be Safe</h2>
+                                            <p class="tm-carousel-item-text">Find help in the form of hundreds of active volunteers in and around your locality, at the time of a calamity.
+                                            </p>
+                                        </div>
+                                    </div>                               
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="carousel-content">
+                                        <div>
+                                            <h2 class="tm-carousel-item-title">Make Safe</h2>
+                                            <p class="tm-carousel-item-text">Report a crime as soon as you witness one, the tip would be kept totally anonymous and the closest volunteer team would be deployed to the crime scene, as soon as possible.
+                                        </div>
+                                    </div>                                
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="carousel-content">
+                                        <div>
+                                            <h2 class="tm-carousel-item-title">Keep Safe</h2>
+                                            <p class="tm-carousel-item-text">Become a permanent volunteer yourself and find the satisfaction of making the world a better place by helping your fellow locality inhabitants, and making the streets safer for everyone.
+                                        </div>
+                                    </div>                                
+                                </div>
+
+                            </div>
+                            
+                        </div>                    
+                    </section>
+                </div>
+            </div> 
+
+            <div class="row wow bounceInLeft">
+                
+                <section class="tm-2-col-img-text tm-2-col-img-lg-right">
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-2-col-img">                    
+                        <!-- <img src="/images/sun-cloud.jpg" alt="Image" class="img-fluid"> -->
+                        <%= image_tag("sun-cloud.jpg", :alt => "Image",class:"img-fluid") %>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-2-col-text wow slideInLeft">
+                        <h2 class="tm-2-col-text-title">Find the active volunteers at your location:</h2>
+
+                        <form action="index.html" method="post" class="tm-contact-form">       
+                            <div class="form-group">
+                                <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Location"  required/>
+                            </div>
+                        </form>   
+                        
+                    <a href="#" class="tm-bordered-btn" onclick="window.location.href = '/volunteers/sp/'+$( '#contact_name' ).val()">Show</a>
+                    </div>
+                    
+                </section>
+
+            </div> 
+
+           
+
+
+            <div class="row tm-section tm-blue-bg-row wow zoomInLeft">
+                
+                <section class="tm-section-contact">
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-xs-center">
+                         <% if volunteer_signed_in? %>
+                         <h2 class="tm-section-title"><%= "Welcome   "%><%= current_volunteer.name.capitalize %></h2>
+                       <h2 class="tm-section-title"><%= "Edit You Profile!" %></h2>
+                        
+
+<%= link_to('Edit Profile', edit_volunteer_registration_path,{ :class=>"tm-btn-white-big" }) %>
+<% else %>
+<h2 class="tm-section-title"><%= "Become a Volunteer" %></h2>
+                        
+                         <p class="tm-section-subtitle"><%="Sign up and start contributing to the society."%></p>
+ <%= link_to('Register', new_volunteer_registration_path,{ :class=>"tm-btn-white-big" })  %> 
+ <% end %>
+
+
+
+                        
+                    </div>
+
+                    
+                    
+                
+
+                </section>
+
+            </div>
+
+            
+            <div class="row tm-section wow zoomInRight">
+                
+                <section class="tm-section-contact">
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-xs-center">
+                        <% if volunteer_signed_in? %>
+                       <h2 class="tm-section-title"><%= "Do You Want to Logout??" %></h2>
+                        
+
+<%= link_to'Logout', destroy_volunteer_session_path , { :class=>"tm-btn-white-big1" }%> 
+<% else %>
+<h2 class="tm-section-title"><%= "Already a member?" %></h2>
+                        <p class="tm-section-subtitle"><%="Sign in and start using your powers."%></p>
+ <%= link_to('Login', new_volunteer_session_path,{ :class=>"tm-btn-white-big1" }) %>  
+ <% end %>
+                    </div>
+
+                   
+                    
+                
+
+                </section>
+
+            </div>
+            <div class="row wow bounceInLeft">
+                
+                <section class="tm-2-col-img-text tm-2-col-img-lg-right">
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-2-col-img">                    
+                        <!-- <img src="img/1.jpg" alt="Image" class="img-fluid"> -->  
+                         <%= image_tag("1.jpg", :alt => "Image",class:"img-fluid") %>
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-2-col-text">
+                        <h2 class="tm-2-col-text-title">View your Team:</h2> 
+                        <input type="text" id="contact_namesss" name="contact_namesss" class="form-control" placeholder="Category"  required/><br>
+ <a href="#" class="tm-bordered-btn" onclick="window.location.href = '/volunteers/cat/'+$( '#contact_namesss' ).val()">Show</a>
+                    </div>
+                    
+                </section>
+
+            </div> 
+<div class="row wow bounceInRight">
+                
+                <section class="tm-2-col-img-text tm-2-col-img-lg-left">
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-2-col-img">                    
+                           <%= image_tag("2.jpg", :alt => "Image",class:"img-fluid") %>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-2-col-text">
+                        <h2 class="tm-2-col-text-title">Get all details of a fellow volunteer</h2>
+
+                        <form action="index.html" method="post" class="tm-contact-form">       
+                            <div class="form-group">
+                                <input type="text" id="contact_namess" name="contact_namess" class="form-control" placeholder="First and Last Name"  required/>
+                            </div>
+                        </form>   
+                         <a href="#" class="tm-bordered-btn" onclick="window.location.href = '/volunteers/nam/'+$( '#contact_namess' ).val()">Show</a>
+                    </div>
+                    
+                </section>
+
+            </div> 
+
+<div class="row wow bounceInLeft">
+                
+                <section class="tm-2-col-img-text tm-2-col-img-lg-right">
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-2-col-img">                    
+                        <!-- <img src="img/1.jpg" alt="Image" class="img-fluid"> -->  
+                         <%= image_tag("online.jpg", :alt => "Image",class:"img-fluid") %>
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-2-col-text">
+                        <h2 class="tm-2-col-text-title">View Online Volunteers:</h2> 
+                 <%= link_to 'Online', online_path , { :class=>"tm-bordered-btn" }%>
+                    </div>
+                    
+                </section>
+
+            </div> 
+
+
+
+<div class="row wow bounceInRight">
+                
+                <section class="tm-2-col-img-text tm-2-col-img-lg-left">
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-2-col-img">                    
+                        <!-- <img src="img/4.jpg" alt="Image" class="img-fluid"> -->
+                           <%= image_tag("help.jpg", :alt => "Image",class:"img-fluid") %>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-2-col-text">
+                        <h2 class="tm-2-col-text-title">Help Portal:</h2>
+
+                       
+                        <%= link_to 'Help', py_path , { :class=>"tm-bordered-btn" }%>
+                    </div>
+                    
+                </section>
+
+            </div>
+
+
+
+<div class="row wow bounceInLeft">
+                
+                <section class="tm-2-col-img-text tm-2-col-img-lg-right">
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-2-col-img">                    
+                        <!-- <img src="img/1.jpg" alt="Image" class="img-fluid"> -->  
+                         <%= image_tag("chat.jpg", :alt => "Image",class:"img-fluid") %>
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-2-col-text">
+                        <h2 class="tm-2-col-text-title">Chat Section:</h2> 
+                 <%= link_to 'Chat', chat_path , { :class=>"tm-bordered-btn" }%>
+                    </div>
+                    
+                </section>
+
+            </div> 
+
+
+<div class="row wow bounceInRight">
+                
+                <section class="tm-2-col-img-text tm-2-col-img-lg-left">
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-2-col-img">                    
+                        <!-- <img src="img/4.jpg" alt="Image" class="img-fluid"> -->
+                           <%= image_tag("loc.png", :alt => "Image",class:"img-fluid") %>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-2-col-text">
+                        <h2 class="tm-2-col-text-title">Live Location of Active Volunteers:</h2>
+
+                       
+                        <%= link_to 'Location', loc_path , { :class=>"tm-bordered-btn" }%>
+                    </div>
+                    
+                </section>
+
+            </div>
+
+
+
+
+ <% if volunteer_signed_in? %>
+<div class="row tm-section tm-blue-bg-row wow zoomInLeft">
+                
+                <section class="tm-section-contact">
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-xs-center">
+                        
+                        
+<h2 class="tm-section-title"><%= "Share Your Live Location" %></h2>
+                        
+                         <p class="tm-section-subtitle"><%="Share and start contributing to the society."%></p>
+ <%= link_to('Live', trip_path,{ :class=>"tm-btn-white-big" })  %> 
+ <% end %>
+
+
+
+                        
+                    </div>
+
+                    
+                    
+                
+
+                </section>
+
+            </div>
+
+
+
+
+
+   <div class="row tm-section wow zoomInRight">
+                
+                <section class="tm-section-contact">
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-xs-center">
+                        
+                       <h2 class="tm-section-title"><%= "Explore More!!!" %></h2>
+                        
+
+<%= link_to'Docket', slider_path , { :class=>"tm-btn-white-big1" }%> 
+
+                    
+
+
+                    </div>
+
+                   
+                    
+                
+
+                </section>
+
+            </div>
+
+
+
+            
+            <div class="row wow bounceInRight">                
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">                    
+                    <hr>
+                </div>
+            </div>
+
+            <div class="row wow bounceInRight">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <p class="text-xs-center tm-copyright-text">Copyright &copy; 2018 </p>
+                </div>
+            </div>
+            
+        </div> 
+
+        
+        
+        <script>     
+       
+            $(document).ready(function(){
+
+                /* Smooth Scrolling*/
+                $('a[href*="#"]:not([href="#"])').click(function() {
+                    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+                        && location.hostname == this.hostname) {
+                        
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                        
+                        if (target.length) {
+                            
+                            $('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 1000);
+                            return false;
+                        }
+                    }
+                }); 
+                
+                /* Enable swiping for tablets and mobile*/
+                if($(window).width() <= 991) {
+                    $(".carousel-inner").swipe( {
+                        
+                        swipeLeft:function(event, direction, distance, duration, fingerCount) {
+                            $(this).parent().carousel('next'); 
+                        },
+                        swipeRight: function() {
+                            $(this).parent().carousel('prev'); 
+                        },
+                        
+                        threshold:0
+                    });
+                }  
+
+                /* Handle window resize */
+                $(window).resize(function(){
+                    if($(window).width() <= 991) {
+                        $(".carousel-inner").swipe( {
+                            
+                            swipeLeft:function(event, direction, distance, duration, fingerCount) {
+                                $(this).parent().carousel('next'); 
+                            },
+                            swipeRight: function() {
+                                $(this).parent().carousel('prev'); 
+                            },
+                           
+                            threshold:0
+                        });
+                     }
+                });              
+                           
+            });
+
+        </script>             
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<%=stylesheet_link_tag "style_sl"%>
+
+<head>
+  <meta charset="UTF-8">
+  <title>PatrolPortal</title>
+
+
+
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+
+
+
+
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css'>
+<link rel='stylesheet' href='https://static.fontawesome.com/css/fontawesome-app.css'>
+<link rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.2.0/css/all.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700'>
+
+      <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+  <style type="text/css">
+     
+    /* a {
+  color: white;
+  text-decoration: none;  no underline 
+}
+
+a:hover {
+    color: red;
+}
+*/
+
+A.class1 {color:white;
+text-decoration: none;}
+A.class1:hover { color: blue;}
+A.class2 {color:white;
+text-decoration: none;}
+A.class2:hover { color: red;}
+A.class4 {color:white;
+text-decoration: none;}
+A.class4:hover { color: #F012BE;}
+  </style>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+  <div class="options">
+
+   <div class="option active" style="--optionBackground:url(/assets/sl_vol.png);">
+      <div class="shadow"></div>
+      <div class="label">
+         <div class="icon">
+            <i class="fas fa-walking"></i>
+         </div>
+         <div class="info">
+            <div class="main"><%= link_to('Volunteer Portal', index1_path,{ :class=>"class1" }) %></div>
+
+
+            <!-- <div class="sub">Omuke trughte a otufta</div> -->
+         </div>
+      </div>
+   </div>
+   <div class="option" style="--optionBackground:url(/assets/crime_sl.jpg);">
+      <div class="shadow"></div>
+      <div class="label">
+         <div class="icon">
+<i class="fas fa-gavel"></i>
+         </div>
+         <div class="info">
+            <div class="main"><%= link_to('Crime Portal', search_crime_path,{ :class=>"class2" }) %></div>
+          
+         </div>
+      </div>
+   </div>
+   <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5af3f8303456e376ceda1517553ba786/tumblr_o4986gakjh1qho82wo1_1280.jpg);">
+      <div class="shadow"></div>
+      <div class="label">
+         <div class="icon">
+            <i class="fas fa-tree"></i>
+         </div>
+         <div class="info">
+            <div class="main"><%= link_to('Help Portal', py_path,{ :class=>"class2" }) %></div>
+         </div>
+      </div>
+   </div>
+   <div class="option" style="--optionBackground:url(/assets/stats.jpg);">
+      <div class="shadow"></div>
+      <div class="label">
+         <div class="icon">
+<i class="fas fa-chart-bar"></i>
+         </div>
+         <div class="info">
+            <div class="main"><%= link_to('Stats Portal', stat_index_path,{ :class=>"class4" }) %></div>
+            
+         </div>
+      </div>
+   </div>
+  <div class="option" style="background: white">
+     <div class="shadow"></div>
+    <!--   <div class="label">
+         <div class="icon">
+            <i class="fas fa-sun"></i>
+         </div>
+         <div class="info">
+            <div class="main">Inatethi</div>
+            <div class="sub">Omuke trughte a otufta</div>
+         </div>
+      </div> -->
+   </div>
+</div>
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+<script type="text/javascript">
+   
+
+$(".option").click(function(){
+   $(".option").removeClass("active");
+   $(this).addClass("active");
+});
+</script>
+
+
+
+
+</html>

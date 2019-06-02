@@ -1,0 +1,51 @@
+<style>
+
+.btn {
+  border-radius: 5px;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.danger {
+    border-color: #F012BE;
+    color: #F012BE;
+}
+
+.danger:hover {
+    background: #F012BE;
+    color: white;
+}
+
+.tm-btn-white-big1 {
+    font-size: 1.5rem;
+    padding: 0.5rem 2.5rem;
+    border-radius: 0.5rem;
+}
+
+</style>
+
+<center>
+<p><h1><%=@c[0].Locality.capitalize%></h1></p>
+
+<br>
+<br>
+
+<%= pie_chart @c.group(:gender).count %>
+
+<p><h3>Based on Gender</h3></p>
+<br>
+<hr>
+<br>
+<%= pie_chart @c.group(:type).count %>
+<p><h3>Based on Category</h3></p>
+
+
+<%= link_to 'General Stats', gen_stats_path,{ :class=>"tm-btn-white-big1 btn btn danger" }  %>
+
+<%= link_to 'Back', stat_index_path,{ :class=>"tm-btn-white-big1 btn btn danger" }  %>
+<%= link_to 'Back to Dock', slider_path,{ :class=>"tm-btn-white-big1 btn btn danger" }  %>
+
+</center>

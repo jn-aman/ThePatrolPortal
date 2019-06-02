@@ -1,0 +1,107 @@
+
+<script type="text/javascript">addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }</script>
+  <script type="application/x-javascript">  </script>
+  <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+
+
+<%=stylesheet_link_tag "style_sign_up"%>
+
+<br><br>
+
+  <div class="main-w3layouts wrapper">
+
+<h1>Sign up!</h1>
+<div class="main-agileinfo">
+      <div class="agileits-top"> 
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+<!-- <div class="field"> -->
+          <%= f.label :username ,:class =>'text'%><br />
+  <%= f.text_field :username, autofocus: true, autocomplete: "username",class: 'text'%>
+        <!-- </div> -->
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true,class: 'text' %>
+  <!-- </div> -->
+
+  <!-- <div class="field"> -->
+    <%= f.label :police_station %><br />
+    <%= f.text_field :police_station,class: 'text' %>
+  <!-- </div> -->
+
+
+  <!-- <div class="field"> -->
+    <%= f.label :nearest_police_chowki %><br />
+    <%= f.text_field :nearest_police_chowki,class: 'text' %>
+  <!-- </div> -->
+
+  <!-- <div class="field"> -->
+    <%= f.label :mobile_number %><br />
+    <%= f.text_field :mobile_number,class: 'text' %>
+  <!-- </div> -->
+
+  <!-- <div class="field"> -->
+
+   <%= f.label :category %><br />
+    <%= f.select :category, ['General Public', 'SPO', 'RWA members', 'Civil Defence'],class: 'text'%>
+  <!-- </div> -->
+
+  <!-- <div class="field"> -->
+    <%= f.label :email %><br />
+    <%= f.email_field :email,class: 'text' %>
+  <!-- </div> -->
+
+  <!-- <div class="field"> -->
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off",class: 'text' %>
+  <!-- </div> -->
+
+  <!-- <div class="field"> -->
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" ,class: 'text'%>
+  <!-- </div> -->
+<br>
+<div class="wthree-text">  
+  <div class="actions">
+    <%= f.submit "Sign Up" ,class: "clear"%>
+  
+  </div>
+<% end %>
+
+<br>
+
+
+<%= render "devise/shared/links" %>
+<br>
+  <div class="actions">
+
+<%= link_to "Back", root_path,{ :class=>"btn btn-danger" } %>
+
+  </div>
+              
+        
+    
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<ul class="w3lsg-bubbles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>  

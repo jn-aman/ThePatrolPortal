@@ -1,0 +1,107 @@
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+ -->
+<style>
+
+.btn {
+  border-radius: 5px;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.danger {
+    border-color: crimson;;
+    color: crimson;
+}
+
+.danger:hover {
+    background: crimson;
+    color: white;
+}
+
+
+a {
+    color: crimson;
+}
+{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+ 
+td,th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+ tr:hover {background-color: #ddd;}
+
+ th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: crimson;
+    color: white;
+}
+.tm-btn-white-big1 {
+    font-size: 1.5rem;
+    padding: 0.5rem 2.5rem;
+    border-radius: 0.5rem;
+}
+
+
+
+
+</style>
+<center>
+  
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Crimes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Locality</th>
+      <th>Description</th>
+     <% if volunteer_signed_in? %> 
+     <th colspan="3"><center>Actions</center></th>
+     <%else%>
+     <th>Actions</th>
+     <%end%>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @crimes.each do |crime| %>
+      <tr>
+        <td><%= crime.Type %></td>
+        <td><%= crime.Locality %></td>
+        <td><%= crime.Description %></td>
+        <td><%= link_to 'Show', crime %></td>
+
+        <% if volunteer_signed_in? %>
+        <td><%= link_to 'Edit', edit_crime_path(crime) %></td>
+        <td><%= link_to 'Destroy', crime, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Register Crime', new_crime_path,{ :class=>"tm-btn-white-big1 btn danger" }  %>
+<%= link_to 'Back to Crimes', search_crime_path,{ :class=>"tm-btn-white-big1 btn btn danger" }  %>
+
+<%= link_to 'Back to Dock', slider_path,{ :class=>"tm-btn-white-big1 btn btn danger" }  %>
+
+
