@@ -1,5 +1,5 @@
 CMake==3.12.0
-opencv-python==3.2.0.8
+opencv-python==4.2.0.32
 tensorflow
 Keras==2.1.6
 pandas==0.23.0
